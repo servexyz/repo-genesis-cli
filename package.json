@@ -7,12 +7,13 @@
     "@babel/core": "^7.0.0-beta.39",
     "@babel/node": "^7.0.0-beta.39",
     "@babel/preset-env": "^7.0.0-beta.39",
-    "ava": "^1.0.0-beta.1"
+    "ava": "^1.0.0-beta.1",
+    "chmod": "^0.2.1"
   },
   "scripts": {
     "start": "babel-node index.js",
     "test": "ava",
-    "cli": "./index.js unicorns --rainbow"
+    "cli": "./cli.js unicorns --rainbow"
   },
   "babel": {
     "presets": [
