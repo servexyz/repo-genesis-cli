@@ -1,7 +1,7 @@
 {
   "name": "node-repl",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "cli.js",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.39",
@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "babel-node index.js",
-    "test": "ava"
+    "test": "ava",
+    "cli": "./index.js unicorns --rainbow"
   },
   "babel": {
     "presets": [
@@ -24,5 +25,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "chalk": "^2.3.1"
   }
 }
