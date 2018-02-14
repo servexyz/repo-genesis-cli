@@ -25,4 +25,4 @@ npm run test
 ## Related
 
 * [@sindresorhus/meow](https://github.com/sindresorhus/meow)
-* [@alechp/node-repl](https://github.com/alechp/node-repl)
+* [@servexyz/npm-starter](https://github.com/servexyz/npm-starter)
