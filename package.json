@@ -11,9 +11,8 @@
     "chmod": "^0.2.1"
   },
   "scripts": {
-    "start": "babel-node index.js",
-    "test": "ava",
-    "cli": "./cli.js unicorns --rainbow"
+    "cli": "./cli.js unicorns --rainbow",
+    "test": "ava"
   },
   "babel": {
     "presets": [
