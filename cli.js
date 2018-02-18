@@ -5,24 +5,43 @@ const meow = require("meow");
 const chalk = require("chalk");
 
 const pretty = (input, flags) => {
-  log(`input: ${input} \n ${flags}`);
+  log(
+    `input: ${JSON.stringify(input, null, 2)} \n flags: ${JSON.stringify(
+      flags,
+      null,
+      2
+    )}`
+  );
 };
+
 let c = meow(
   `
     Usage
-        $ respace <input>
+        $ repo <input>
 
       Options
-        --config, -c  Generate repospace from config
+        --path, -p ./path/to/my/cloned/repos (Default: process.cwd())
+        --config, -c ./path/to/my/config
+        --sample, -s Print sample config
 
       Examples
-        $ respace -config my-config.js
+        $ repo -c ~/my-config.js
+        $ repo -p ~/target/directory -c ~/my-config.js
+        $ repo -s 
 `,
   {
     flags: {
+      path: {
+        type: "string",
+        alias: "p",
+        default: process.cwd()
+      },
       config: {
         type: "string",
         alias: "c"
+      },
+      sample: {
+        alias: "s"
       }
     }
   }
