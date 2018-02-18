@@ -1,6 +1,6 @@
 {
-  "name": "node-repl",
-  "version": "1.0.0",
+  "name": "repo-genesis-cli",
+  "version": "0.5.0",
   "main": "cli.js",
   "license": "MIT",
   "dependencies": {
