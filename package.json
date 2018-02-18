@@ -3,6 +3,9 @@
   "version": "0.5.3",
   "main": "cli.js",
   "license": "MIT",
+  "bin": {
+    "repo": "cli.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/servexyz/repo-genesis-cli"
