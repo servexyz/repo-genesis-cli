@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "chalk": "^2.3.1",
+    "meow": "^4.0.0",
     "repo-genesis": "^0.5.8"
   },
   "devDependencies": {
