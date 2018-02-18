@@ -2,6 +2,8 @@
 
 > Organize multiple repositories into monolith structure
 
+[![Build Status](https://travis-ci.org/servexyz/repo-genesis-cli.svg?branch=master)](https://travis-ci.org/servexyz/repo-genesis-cli)
+
 ## Install
 
 ```bash
