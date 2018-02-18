@@ -38,4 +38,5 @@ repo -c ~/path/to/my/config.js
 
 ## Related
 
-* [@servexyz/repo-genesis](https://github.com/servexyz/repo-genesis)
+* `@servexyz/repo-genesis`
+  > [@github](https://github.com/servexyz/repo-genesis) | [@npm](https://www.npmjs.com/package/repo-genesis)
