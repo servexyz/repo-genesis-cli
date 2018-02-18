@@ -1,1 +1,1 @@
-docs/CLI.md
+docs/cli.md

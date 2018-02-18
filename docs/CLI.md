@@ -2,7 +2,11 @@
 
 > Meow-based CLI app starter
 
+---
+
 ## Getting Started
+
+---
 
 **Install**
 
@@ -22,7 +26,33 @@ npm start
 npm run test
 ```
 
+---
+
+## Goals
+
+---
+
+* Implement repo-genesis
+* Globally executable CLI
+
+---
+
+## Docs
+
+---
+
+**For Users**
+
+* [cli.md](./docs/cli.md)
+
+**For Maintainers**
+
+* [todo.md](./docs/todo.md)
+
+---
+
 ## Related
 
-* [@sindresorhus/meow](https://github.com/sindresorhus/meow)
-* [@servexyz/npm-starter](https://github.com/servexyz/npm-starter)
+---
+
+* [@servexyz/repo-genesis](https://github.com/servexyz/repo-genesis)
