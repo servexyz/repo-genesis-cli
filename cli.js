@@ -38,7 +38,6 @@ async function parse(config) {
 }
 
 if (c.flags.hasOwnProperty("config")) {
-  log(`c.flags.config: ${c.flags.config}`);
   let where = path.join(process.cwd(), c.flags.config);
   let { config } = require(where);
   parse(config);
