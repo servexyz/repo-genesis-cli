@@ -16,14 +16,12 @@ npm install -g repo-genesis-cli
 repo -c ~/path/to/my/config.js
 ```
 
-> Tests: [./tests/cli.test.js]
-> Config: [./tests/sample.config.js]
+* See tests: [cli.test.js](./tests/cli.test.js)
+* See config: [sample.config.js](./tests/sample.config.js)
 
 ---
 
 ## Goals
-
----
 
 * Implement repo-genesis
 * Globally executable CLI
@@ -32,8 +30,6 @@ repo -c ~/path/to/my/config.js
 
 ## Docs
 
----
-
 **For Maintainers**
 
 * [todo.md](./docs/todo.md)
@@ -41,7 +37,5 @@ repo -c ~/path/to/my/config.js
 ---
 
 ## Related
-
----
 
 * [@servexyz/repo-genesis](https://github.com/servexyz/repo-genesis)
