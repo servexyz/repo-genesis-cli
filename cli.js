@@ -9,24 +9,11 @@ const { init } = require("repo-genesis");
 let c = meow(
   `
     Usage
-        $ repo <input>
-
-      Options
-        --config, -c ./path/to/my/config
-        --sample, -s Print sample config
+        $ repogen <input>
 
       Examples
-        $ repo -c ~/my-config.js
-        $ repo -s 
-`,
-  {
-    flags: {
-      config: {
-        type: "string",
-        alias: "c"
-      }
-    }
-  }
+        $ repogen /relative/path/to/my/config.js
+`
 );
 
 async function parse(config) {
@@ -37,10 +24,12 @@ async function parse(config) {
   }
 }
 
-if (c.flags.hasOwnProperty("config")) {
-  let where = path.join(process.cwd(), c.flags.config);
-  let { config } = require(where);
+if (c.input.length === 1) {
+  let { config } = require(path.join(process.cwd(), c.input[0]));
   parse(config);
 } else {
-  log(`Please pass ${chalk.magenta("-c")} property`);
+  log(
+    `Please pass the path to your configuration. Example: \n 
+    ${chalk.green("repogen")} ${chalk.blue("/relative/path/to/my/config.js")}`
+  );
 }

@@ -13,7 +13,7 @@ npm install -g repo-genesis-cli
 ## Use
 
 ```bash
-repogen -c ~/path/to/my/config.js
+repogen ~/path/to/my/config.js
 ```
 
 * See tests: [cli.test.js](./tests/cli.test.js)

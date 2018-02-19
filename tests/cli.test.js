@@ -5,7 +5,7 @@ const path = require("path");
 
 test.before(t => {
   const fs = require("fs-extra");
-  const sandbox = path.join(__dirname, "../sandbox");
+  const sandbox = path.join(__dirname, "./sandbox");
   fs.removeSync(sandbox);
 });
 
@@ -23,7 +23,7 @@ test("Repositories and symlinks generated", t => {
   TODO: Replicate test here and in repo-genesis
   */
   const exec = require("child_process").exec;
-  exec("./cli.js -c ./tests/sample.config.js", (error, stdout, stderr) => {
+  exec("./cli.js ./tests/sample.config.js", (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
