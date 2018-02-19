@@ -1,6 +1,6 @@
 {
   "name": "repo-genesis-cli",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "main": "cli.js",
   "license": "MIT",
   "bin": {
