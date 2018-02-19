@@ -1,6 +1,6 @@
 {
   "name": "repo-genesis-cli",
-  "version": "0.5.8",
+  "version": "0.5.9",
   "main": "cli.js",
   "license": "MIT",
   "bin": {
@@ -10,7 +10,9 @@
     "type": "git",
     "url": "https://github.com/servexyz/repo-genesis-cli"
   },
-  "files": ["cli.js"],
+  "files": [
+    "cli.js"
+  ],
   "dependencies": {
     "chalk": "^2.3.1",
     "meow": "^4.0.0",
