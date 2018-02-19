@@ -4,15 +4,13 @@
   "main": "cli.js",
   "license": "MIT",
   "bin": {
-    "repo": "cli.js"
+    "repogen": "cli.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/servexyz/repo-genesis-cli"
   },
-  "files": [
-    "cli.js"
-  ],
+  "files": ["cli.js"],
   "dependencies": {
     "chalk": "^2.3.1",
     "meow": "^4.0.0",
