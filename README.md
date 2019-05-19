@@ -1,4 +1,4 @@
-# repo-genesis-cli
+![logo](docs/images/logo/repo-genesis@2x.png)
 
 > Organize multiple repositories into monolith structure
 
