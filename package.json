@@ -1,7 +1,7 @@
 {
-  "name": "node-starter",
-  "version": "1.0.0",
-  "description": "starting point for node modules and servers",
+  "name": "repo-genesis",
+  "version": "2.0.0",
+  "description": "monolith maker & manager",
   "main": "build/main.js",
   "license": "MIT",
   "keywords": [
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/servexyz/node-starter"
+    "url": "https://github.com/servexyz/repo-genesis-cli"
   },
   "devDependencies": {
     "@ava/babel-preset-stage-4": "^3.0.0",
@@ -44,14 +44,10 @@
     "build:dev": "webpack --mode development --display minimal",
     "clean": "npm run clean:build",
     "clean:build": "rm -Rf ./build",
-    "clean:docker": "docker rm -f $(docker ps -aqf 'name=node-starter')",
     "dev": "npm run dev:liveReloadedModuleAndTests",
     "dev:vanillaModule": "babel-node src/index.js",
     "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
-    "dev:liveReloadedDocker": "npm-run-all -p docker:compose dev:liveReloadedModule docker:liveReload ",
     "dev:liveReloadedModuleAndTests": "npm-run-all -s clean:build build test:liveReloadedAva",
-    "docker:liveReload": "npx docker-live-reload 'src/**/*' node-starter_server_1 /usr/src/server/src",
-    "docker:compose": "docker-compose up -d",
     "test": "npm run test:ava",
     "test:ava": "ava",
     "test:liveReloadedAva": "ava --watch",
