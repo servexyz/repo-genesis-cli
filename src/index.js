@@ -7,5 +7,6 @@ import * as rg from "repo-genesis-lib";
 import meow from "meow";
 
 (async () => {
-  await rg.parse();
+  let config = await rg.parse();
+  await rg.genAll(config);
 })();
