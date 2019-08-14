@@ -41,7 +41,9 @@
     "webpackbar": "^3.2.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.5.5"
+    "@babel/runtime": "^7.5.5",
+    "meow": "^5.0.0",
+    "repo-genesis-lib": "^2.0.2"
   },
   "scripts": {
     "start": "npm run dev",
@@ -50,7 +52,7 @@
     "build:dev": "webpack --mode development --display minimal",
     "clean": "npm run clean:build",
     "clean:build": "rm -Rf ./build",
-    "dev": "npm run dev:liveReloadedModuleAndTests",
+    "dev": "npm run dev:liveReloadedModule",
     "dev:vanillaModule": "babel-node src/index.js",
     "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
     "dev:liveReloadedModuleAndTests": "npm-run-all -s clean:build build test:liveReloadedAva",
