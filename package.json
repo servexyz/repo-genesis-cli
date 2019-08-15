@@ -1,43 +1,109 @@
 {
-  "name": "repo-genesis-cli",
-  "version": "0.5.11",
-  "main": "cli.js",
+  "name": "repo-genesis",
+  "version": "2.0.0",
+  "description": "monolith maker & manager",
+  "main": "build/main.js",
   "license": "MIT",
-  "bin": {
-    "repogen": "cli.js"
-  },
+  "keywords": [
+    "servexyz",
+    "NSTAR",
+    "repo-genesis",
+    "monoliths",
+    "git clone",
+    "clone repository",
+    "repositories",
+    "dependency remover",
+    "dependency installer"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/servexyz/repo-genesis-cli"
   },
-  "files": [
-    "cli.js"
-  ],
-  "dependencies": {
-    "chalk": "^2.3.1",
-    "meow": "^4.0.0",
-    "repo-genesis": "^0.5.8"
-  },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.39",
-    "@babel/preset-env": "^7.0.0-beta.39",
-    "ava": "^1.0.0-beta.1",
-    "chmod": "^0.2.1",
-    "fs-extra": "^5.0.0"
+    "@ava/babel-preset-stage-4": "^3.0.0",
+    "@babel/core": "7.5.0",
+    "@babel/node": "7.5.0",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "7.5.2",
+    "@babel/register": "7.4.4",
+    "ava": "^2.2.0",
+    "babel-loader": "^8.0.6",
+    "duplicate-package-checker-webpack-plugin": "^3.0.0",
+    "execa": "^2.0.3",
+    "nodemon": "^1.19.1",
+    "nodemon-webpack-plugin": "^4.0.8",
+    "npm-run-all": "^4.1.5",
+    "size-plugin": "^1.2.0",
+    "source-map-loader": "^0.2.4",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-node-externals": "^1.7.2",
+    "webpackbar": "^3.2.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "meow": "^5.0.0",
+    "ora": "^3.4.0",
+    "repo-genesis-lib": "^2.0.4"
   },
   "scripts": {
-    "test": "ava"
+    "start": "npm run dev",
+    "build": "npm run build:prod",
+    "build:prod": "webpack --mode production --display minimal",
+    "build:dev": "webpack --mode development --display minimal",
+    "clean": "npm run clean:build",
+    "clean:build": "rm -Rf ./build",
+    "dev": "npm run dev:liveReloadedModule",
+    "dev:vanillaModule": "babel-node src/index.js",
+    "dev:liveReloadedModule": "nodemon --watch src/index.js --exec 'babel-node src/index.js'",
+    "dev:liveReloadedModuleAndTests": "npm-run-all -s clean:build build test:liveReloadedAva",
+    "test": "npm run test:ava",
+    "test:ava": "ava",
+    "test:liveReloadedAva": "ava --watch",
+    "production": "npm run build && node build/main.js",
+    "ci": "npm-run-all -s build ci:local:timed:vuln",
+    "ci:snyk": "snyk test",
+    "ci:remote": "npm-run-all -s clean:build build test:ava",
+    "ci:local": "trevor",
+    "ci:local:timed": "npm run ci:local | gnomon --type=elapsed-total",
+    "ci:local:timed:vuln": "npm-run-all -p ci:snyk ci:local | gnomon --type=elapsed-total",
+    "ci:local:cache:install": "docker pull verdaccio/verdaccio",
+    "ci:local:cache:run": "docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio",
+    "ci:prepare": "npm install -g trevor gnomon"
   },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "node": "9.3.0"
-          }
-        }
-      ]
+  "repogen": {
+    "dir": "sandbox",
+    "repos": [
+      {
+        "plat": "github.com",
+        "space": "servexyz",
+        "repo": "get-pkg-prop",
+        "dir": "modules",
+        "sym": "gpp"
+      },
+      {
+        "space": "servexyz",
+        "repo": "tacker",
+        "sym": "tkr"
+      },
+      {
+        "servexyz": "paths-exist"
+      }
     ]
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ],
+    "babel": {
+      "testOptions": {
+        "babelrc": true,
+        "configFile": true
+      }
+    },
+    "files": [
+      "tests/**/*"
+    ],
+    "verbose": true
   }
 }
