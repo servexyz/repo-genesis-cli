@@ -43,7 +43,7 @@ module.exports = {
       verbose: false
     }),
     new DuplicatePackageCheckerPlugin(),
-    new SizePlugin(),
+    new SizePlugin({publish:true}),
     new WebpackBar(),
     new webpack.BannerPlugin({ banner: "#!/usr/bin/env node", raw: true })
   ]
